@@ -24,7 +24,7 @@ export const updateUser = async (req, res, next) => {
                 avatar: req.body.avatar,
 
             }
-        }, {new: true}) /* It is used for update new information */
+        }, {new: true}); /* It is used for update new information */
 
         const {password, ...rest} = updatedUser._doc;
 
