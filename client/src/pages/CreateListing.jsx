@@ -81,7 +81,23 @@ const handleImageSubmit = (e) => {
     });
   };
 
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    if(e.target.id === 'sale' || e.target.id === 'rent'){
+        setFormData({
+            ...formData,
+            type: e.target.id,
+        })
+    }
+
+    if(e.target.id === 'parking' || e.target.id === 'furnished' || e.target.id === 'offer'){
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.checked
+        })
+    }
+
+    if(e.target.type === 'number' || e.target.type === 'text' || e.target.type === 'textarea')
+  };
 
   return (
     <main className='p-3 max-w-4xl mx-auto'>
@@ -214,7 +230,16 @@ const handleImageSubmit = (e) => {
                     </div>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <input type='number' id='discountPrice' min='1' max='10' required className='p-3 border border-gray-300 rounded-lg'/>
+                        <input 
+                          type='number' 
+                          id='discountPrice' 
+                          min='1' 
+                          max='10' 
+                          required 
+                          className='p-3 border border-gray-300 rounded-lg'
+                          onChange={handleChange}
+                          value={formData.discountPrice}
+                          />
                         <div className='flex flex-col items-center'>
                         <p>Discounted Price</p>
                         <span className='text-xs'>($ / month)</span>
