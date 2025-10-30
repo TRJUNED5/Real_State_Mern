@@ -5,8 +5,10 @@ import {
     uploadBytesResumable 
 } from 'firebase/storage';
 import { app } from '../firebase';
+import {useSelector} from 'react-redux'
 
 export default function CreateListing() {
+const {currentUser} = useSelector((state) => state.user)    
 const [files, setFiles] = useState([]);
 const [formData, setFormData] = useState({
     imageUrls: [],
@@ -116,7 +118,10 @@ const handleImageSubmit = (e) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify({
+                ...formData,
+                userRef: currentUser._id,
+            }),
         });
         const data = await res.json();
         setLoading(false);
@@ -262,8 +267,8 @@ const handleImageSubmit = (e) => {
                         <input 
                           type='number' 
                           id='discountPrice' 
-                          min='1' 
-                          max='10' 
+                          min='0' 
+                          max='100000000' 
                           required 
                           className='p-3 border border-gray-300 rounded-lg'
                           onChange={handleChange}
@@ -308,7 +313,10 @@ const handleImageSubmit = (e) => {
                         </div>
                     ))
                 }
-                <button className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-88'>Create Listing</button>
+                <button className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-88'>
+                    {loading ? 'Creating...' : 'Create listing'}
+                </button>
+                {error && <p className="text-red-700 text-sm">{error}</p>}
             </div>
         </form>
     </main>
