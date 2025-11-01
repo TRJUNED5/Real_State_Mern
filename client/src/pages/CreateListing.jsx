@@ -6,9 +6,11 @@ import {
 } from 'firebase/storage';
 import { app } from '../firebase';
 import {useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom' 
 
 export default function CreateListing() {
-const {currentUser} = useSelector((state) => state.user)    
+const {currentUser} = useSelector((state) => state.user)
+const navigate = useNavigate()    
 const [files, setFiles] = useState([]);
 const [formData, setFormData] = useState({
     imageUrls: [],
@@ -130,6 +132,7 @@ const handleImageSubmit = (e) => {
         if(data.success === false){
             setError(data.message);
         }
+        navigate(`/listing/${data._id}`)
     } catch (error) {
         setError(error.message);
         setLoading(false);
