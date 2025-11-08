@@ -191,7 +191,11 @@ export default function Profile() {
       {userListings && 
         userListings.length > 0 && 
         userListings.map((listing) => 
-        <div key={listing._id} className=''>
+        <div key={listing._id} 
+         className=''>
+          <Link to={`/listing/${listing._id}`}>
+            <img src ={listing.imageUrls[0]} alt="listing cover" className='h-16 w-16 object-contain rounded-lg'/>
+          </Link>
 
         </div>
       )
