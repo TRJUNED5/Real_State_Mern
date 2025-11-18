@@ -26,6 +26,8 @@ const [formData, setFormData] = useState({
     parking: false,
     furnished: false,
 
+
+
     
 });
 const [imageUploadError, setImageUploadError] = useState(false);
