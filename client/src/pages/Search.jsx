@@ -12,9 +12,25 @@ export default function Search() {
     });
 
     const handleChange = (e) => {
-        if (
-            
-        )
+            if(e.target.id === 'all' || e.target.id === 'rent' || e.target.id === 'sale'){
+                setSidebardata({...sidebardata, type: e.target.id})
+            }
+
+            if(e.target.id === 'searchTerm'){
+                setSidebardata({...sidebardata, searchTerm: e.target.value})
+            }
+
+            if(e.target.id === 'parking' || e.target.id === 'furnished' || e.target.id === 'offer'){
+                setSidebardata({...sidebardata, [e.target.id]: e.target.checked || e.target.checked === 'true' ? true : false
+                });
+            }
+
+            if (e.targrt.id === 'sort_order'){
+                const sort = e.target.value.split('')[0] || 'created_at';
+
+                const order = e.target.value.split('_')[1] || 'desc';
+            }
+        
 
     };
     return(
@@ -86,13 +102,16 @@ export default function Search() {
                     </div>
                     <div className='flex items-center gap-2'>
                         <label className='font-semibold'>Sort:</label>
-                        <select id="sort_order"
-                        className='border rounded-lg p-3'
+                        <select
+                            onChange={handleChange}
+                            defaultValue={'created_at_desc'} 
+                            id="sort_order"
+                            className='border rounded-lg p-3'
                         >
-                            <option>Price high to low</option>
-                            <option>Price low to high</option>
-                            <option>Latest</option>
-                            <option>Oldest</option>
+                            <option value='regularPrice_desc'>Price high to low</option>
+                            <option value='regularPrice_asc'>Price low to high</option>
+                            <option value='CreatedAt_desc'>Latest</option>
+                            <option value='CreatedAt_asc'>Oldest</option>
                         </select>
                     </div>
                     <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>Search</button>
