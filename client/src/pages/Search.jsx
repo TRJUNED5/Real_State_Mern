@@ -11,6 +11,8 @@ export default function Search() {
         order: 'desc',
     });
 
+    console.log(sidebardata);
+
     const handleChange = (e) => {
             if(e.target.id === 'all' || e.target.id === 'rent' || e.target.id === 'sale'){
                 setSidebardata({...sidebardata, type: e.target.id})
@@ -21,7 +23,7 @@ export default function Search() {
             }
 
             if(e.target.id === 'parking' || e.target.id === 'furnished' || e.target.id === 'offer'){
-                setSidebardata({...sidebardata, [e.target.id]: e.target.checked || e.target.checked === 'true' ? true : false
+                setSidebardata({...sidebardata, [e.target.id]: e.target.checked || e.target.checked === 'true' ? true : false,
                 });
             }
 
@@ -29,6 +31,8 @@ export default function Search() {
                 const sort = e.target.value.split('')[0] || 'created_at';
 
                 const order = e.target.value.split('_')[1] || 'desc';
+
+                setSidebardata({...sidebardata,sort, order});
             }
         
 
