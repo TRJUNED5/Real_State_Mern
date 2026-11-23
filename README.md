@@ -64,8 +64,6 @@ git clone https://github.com/TRJUNED5/Real_State_Mern.git
 cd Real_State_Mern
 ```
 
-Replace the placeholder URL and directory with your GitHub repository details.
-
 ### 2. Install dependencies
 
 Install backend dependencies from the project root:
