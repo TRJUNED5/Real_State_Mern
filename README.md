@@ -60,8 +60,8 @@ Real_State_Mern/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone https://github.com/TRJUNED5/Real_State_Mern.git
+cd Real_State_Mern
 ```
 
 Replace the placeholder URL and directory with your GitHub repository details.
