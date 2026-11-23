@@ -143,27 +143,27 @@ User profile and user-specific listing endpoints are defined under `/api/user`.
 ### Homepage
 A responsive landing page with a large hero banner, property search, featured listings, and sections for offers, rentals, and sales.
 
-![Tazan Estate Homepage](Screenshot/homepage.png)
+![Tazan Estate Homepage](Screenshot/Homepage.png)
 
 ### Property Search
 Search by keyword, select rental or sale properties, filter amenities such as parking and furnished units, and sort results by price.
 
-![Property Search and Filters](Screenshot/property-search.png)
+![Property Search](Screenshot/Property_search_and_filters.png)
 
 ### User Dashboard
 A personalized profile dashboard for account information, profile photo uploads, and property management.
 
-![User Dashboard](Screenshot/user-dashboard.png)
+![User Dashboard](Screenshot/Profile_dashboard.png)
 
 ### My Properties
 Browse your own listings in a card layout, search within your properties, and access edit or delete actions.
 
-![My Properties](Screenshot/my-properties.png)
+![My Properties](Screenshot/Listing_details.png)
 
 ### Update Listing
 Edit a listing's name, description, location, type, amenities, bedroom and bathroom counts, prices, and images.
 
-![Update Listing](Screenshot/update-listing.png)
+![Create or Edit Listing](Screenshot/Create_or_edit_listing.png)
 ## 🧪 Available Commands
 
 **Project root:**
