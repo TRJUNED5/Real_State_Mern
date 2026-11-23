@@ -142,19 +142,30 @@ User profile and user-specific listing endpoints are defined under `/api/user`.
 
 ## 📸 Screenshots
 
-Add screenshots of your running application here:
+### Homepage
+A responsive landing page with a large hero banner, property search, featured listings, and sections for offers, rentals, and sales.
 
-- Home page
-- Property search and filters
-- Listing details
-- Profile dashboard
-- Create or edit listing
+![Tazan Estate homepage](screenshots/homepage.png)
 
-For example, save an image to `screenshots/home.png`, then include:
+### Property Search
+Search by keyword, select rental or sale properties, filter amenities such as parking and furnished units, and sort results by price.
 
-```md
-![Tazan Estate homepage](screenshots/home.png)
-```
+![Property search and filters](screenshots/property-search.png)
+
+### User Dashboard
+A personalized profile dashboard for account information, profile photo uploads, and property management.
+
+![User dashboard](screenshots/user-dashboard.png)
+
+### My Properties
+Browse your own listings in a card layout, search within your properties, and access edit or delete actions.
+
+![My properties](screenshots/my-properties.png)
+
+### Update Listing
+Edit a listing's name, description, location, type, amenities, bedroom and bathroom counts, prices, and images.
+
+![Update listing form](screenshots/update-listing.png)
 
 ## 🧪 Available Commands
 
@@ -176,15 +187,10 @@ npm run lint    # Run ESLint
 
 ## 🔐 Notes for Deployment
 
-- Configure environment variables securely on your hosting platform.
-- Configure MongoDB network access and credentials for the deployment environment.
-- Set up Firebase authorized domains and storage rules appropriate to your use case.
-- Configure production API routing and hosting; the current Vite proxy is for local development.
-- Confirm that authorization is enforced server-side for protected operations.
+
 
 ## 📄 License
 
-No separate project license file was identified in the uploaded project. Add a `LICENSE` file if you want to specify reuse permissions for this repository.
 
 ---
 
